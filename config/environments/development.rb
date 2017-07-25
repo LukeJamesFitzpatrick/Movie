@@ -37,4 +37,7 @@ Rails.application.configure do
 
   #Required for Heroku
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  #Thoughtbot says to add this line to fix the Paperclip bug.
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 end
