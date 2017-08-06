@@ -4,7 +4,7 @@ class PinsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @pins = Pin.all
+    @pins = Pin.all.order("created_at DESC")
   end
 
   def show
@@ -22,7 +22,7 @@ class PinsController < ApplicationController
     if @pin.save
       redirect_to @pin, notice: 'Pin was successfully created.'
     else
-      render :new
+      render action: 'new'
     end
   end
 
