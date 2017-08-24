@@ -8,13 +8,18 @@
 
 .box {
   margin: 10px;
-  width: 250px;
+  width: 320px;
+  height: 450px;
+  border-radius: 6px;
+  padding: 35px 26px;
+  box-sizing: border-box;
+  margin: 27px;
+  transition: box-shadow .2s;
+  position: abosolute;
 }
 
 .box img {
   width: 100%;
-}
-
-.box img {
-	height: 0 auto;
+  width: 300 px;
+  height: 400 px;
 }
