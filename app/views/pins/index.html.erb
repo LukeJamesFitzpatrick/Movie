@@ -7,6 +7,8 @@
       <div class="panel-body">
         <p><%= pin.description %></p>
         <p><strong><%= pin.user.name if pin.user %></strong></p>
+        <p><%= pluralize(pin.likes.count, "like") %></p>
+          <span class="glyphicon glyphicon-heart"></span>
 
         <% if pin.user == current_user %>
           <div class="actions">
@@ -17,6 +19,7 @@
             <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
               <span class="glyphicon glyphicon-trash"></span>
               Delete
+            <%= link_to 'Like', like_pin_path(pin), method: :post, class: 'pull-right' %>
             <% end %>
           </div>
         <% end %>

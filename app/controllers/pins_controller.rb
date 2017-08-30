@@ -1,10 +1,19 @@
 class PinsController < ApplicationController
-  before_action :set_pin, only: [:show, :edit, :update, :destroy]
+  before_action :set_pin, only: [:show, :edit, :update, :destroy, :like]
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
+  end
+
+  def like
+    @like = @pin.likes.build(user_id: current_user.id)
+    if @like.save
+      redirect_to pins_path, notice: 'You liked this resource.'
+    else
+      redirect_to pins_path, notice: 'You have already liked this resource.'
+    end
   end
 
   def show
