@@ -18,6 +18,11 @@
   position: abosolute;
 }
 
+.image-container img {
+ max-width: 100%;
+ max-height: auto;
+}
+
 .box img {
   width: 100%;
   width: 300 px;
