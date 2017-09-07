@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
 	has_many :pins, dependent: :destroy
 	has_many :likes, dependent: :destroy
 	has_many :liked_pins, through: :likes, source: :pin
+
 	validates :name, presence: true
-	validates_uniqueness_of :username 
 end
 
 
