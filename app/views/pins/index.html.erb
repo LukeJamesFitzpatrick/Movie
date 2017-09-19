@@ -1,12 +1,17 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
+  <%= form_tag pins_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search], class: "form-control" %>
+    <%= submit_tag "Search", :name => nil, class: "btn btn-info btn-block" %>
+  <% end %>
+
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
     <div class="box panel panel-default">
       <%= link_to image_tag(pin.image.url(:medium)), pin %>
       <div class="panel-body">
         <p><%= pin.description %></p>
-        <p><strong><%= pin.user.name if pin.user %></strong></p>
+        <p><strong><%= link_to pin.user.username, user_page_path(pin.user.id) %></strong></p>
         <p><%= pluralize(pin.likes.count, "like") %></p>
           <span class="glyphicon glyphicon-heart"></span>
 

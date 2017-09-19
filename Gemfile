@@ -8,7 +8,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
-gem 'devise', '~> 3.4.0'
+gem 'devise', '~> 4.3'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk', '~> 2'
 gem 'activesupport', '~> 4.2.0'
@@ -28,4 +28,3 @@ end
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
-

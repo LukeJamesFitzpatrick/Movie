@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  resources :users
+  resources :users do
+    resources :pins, only: [:index]
+  end
+  get 'users/:id/' => 'users#show', :as => :user_page
+
   root 'pins#index'
   get "about" => "pages#about"
 end

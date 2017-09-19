@@ -9,7 +9,7 @@
     <div class="panel-body">
     <p><%= @pin.description %></p>
     <p><%= @pin.link %></p>
-    <p><strong><%= @pin.user.name if @pin.user %></strong></p>
+    <p><strong><%= @pin.user.username if @pin.user %></strong></p>
     <% else %>
 
     <% if @pin.user == current_user %>
