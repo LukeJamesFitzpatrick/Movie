@@ -12,8 +12,8 @@
       <div class="panel-body">
         <p><%= pin.description %></p>
         <p><strong><%= link_to pin.user.username, user_page_path(pin.user.id) %></strong></p>
-        <p><%= pluralize(pin.likes.count, "like") %></p>
-          <span class="glyphicon glyphicon-heart"></span>
+        <span><%= pin.likes.count %></span> <span class="glyphicon glyphicon-heart"></span>
+        <span><%= pin.view %></span> <i class="glyphicon glyphicon-eye-open"></i>
 
         <% if pin.user == current_user %>
           <div class="actions">

@@ -22,6 +22,9 @@ class PinsController < ApplicationController
   end
 
   def show
+    @pin = Pin.includes(:comments).find(params[:id])
+    @comment = Comment.new
+    @pin.count_views
   end
 
   def new
@@ -33,6 +36,7 @@ class PinsController < ApplicationController
 
   def create
     @pin = current_user.pins.build(pin_params)
+    @pin.view = 0
     if @pin.save
       redirect_to @pin, notice: 'Post was successfully created.'
     else

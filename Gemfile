@@ -1,21 +1,24 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 
-gem 'rails', '4.2.0'
-gem 'sass-rails', '~> 4.0.3'
+gem 'rails', '~> 5.1', '>= 5.1.4'
+gem 'puma', '~> 3.10'
+gem 'sass-rails', '~> 5.0', '>= 5.0.6'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.2', '>= 4.2.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'devise', '~> 4.3'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk', '~> 2'
-gem 'activesupport', '~> 4.2.0'
+gem 'activesupport', '~> 5.1', '>= 5.1.4'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'masonry-rails', '~> 0.2.0'
 gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
+gem 'redis', '~> 4.0'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 
 group :development, :test do
 	gem 'sqlite3'
