@@ -7,6 +7,8 @@
     <% else %>
       <%= link_to 'Follow', follow_user_path(@user.username), remote: true, class: 'btn btn-sm follow-button', id: 'follow-button', method: :post %>
     <% end %>
+    <% else %>
+    <%= link_to "Edit", edit_user_registration_path, class: 'btn btn-info btn-sm' %>
   <% end %>
 
   <div>
