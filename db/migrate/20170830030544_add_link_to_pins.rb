@@ -1,4 +1,4 @@
-class AddLinkToPins < ActiveRecord::Migration[5.1]
+class AddLinkToPins < ActiveRecord::Migration
   def change
     add_column :pins, :link, :string
   end

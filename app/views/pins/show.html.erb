@@ -9,7 +9,9 @@
       <div class="panel-body">
         <p><strong><%= @pin.user.username %></strong></p>
         <p><%= @pin.description %></p>
-        <p><%= link_to "Get", @pin.link, class: "btn btn-sm btn-success" %></p>  
+        <span><%= @pin.likes.count %></span> <span class="glyphicon glyphicon-heart"></span>
+        <span><%= @pin.view %></span> <i class="glyphicon glyphicon-eye-open"></i>
+        <p><%= link_to "Get", @pin.link, class: "btn btn-sm btn-success btn-get" %></p>
         <% if @pin.user == current_user %>
           <%= link_to edit_pin_path(@pin) do %>
             <span class="glyphicon glyphicon-edit"></span>

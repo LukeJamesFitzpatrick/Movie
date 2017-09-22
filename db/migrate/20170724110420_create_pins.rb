@@ -1,4 +1,4 @@
-class CreatePins < ActiveRecord::Migration[5.1]
+class CreatePins < ActiveRecord::Migration
   def change
     create_table :pins do |t|
       t.string :description
