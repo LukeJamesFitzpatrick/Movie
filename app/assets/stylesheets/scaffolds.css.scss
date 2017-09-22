@@ -78,13 +78,26 @@ div {
 }
 
 .user-profile {
-  margin: 20px 60px;
+  margin: 25px auto;
+  width: 60%;
+}
+
+.profile-username {
+  font-size: 24px;
 }
 
 .form-control {
   margin-bottom: 10px;
 }
 
+.profile-soc {
+  margin: 20px 0;
+}
+
+.profile-follow {
+  margin-right: 15px;
+}
+/* Comments */
 .card {
   position: relative;
   display: -webkit-box;
@@ -115,4 +128,28 @@ div {
 
 .comment-user {
   font-weight: bold;
+}
+
+/* Follow/Unfollow button */
+
+.follow-button {
+  border-color: #4090db;
+  color: #4090db;
+  margin-left: 20px;
+  &:visited, &:focus, &:hover {
+    border-color: #2D6396;
+    color: #2D6396;
+  }
+}
+
+.unfollow-button {
+  border-color: #66bd2b;
+  background-color: #66bd2b;
+  color: white;
+  margin-left: 20px;
+  &:visited, &:focus, &:hover {
+    border-color: #47821F;
+    background-color: #47821F;
+    color: white;
+  }
 }
