@@ -1,13 +1,17 @@
+html, body {
+  height: 100%;
+}
+
 body {
+  font-family: 'Raleway', sans-serif;
   background-color: #fff;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 18px;
+  position: relative;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
@@ -31,6 +35,8 @@ a {
 div {
   &.field, &.actions {
     margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 14px;
   }
 }
 
@@ -156,4 +162,22 @@ div {
     background-color: #47821F;
     color: white;
   }
+}
+
+.container {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  float: right;
+  margin-bottom: 30px;
+}
+
+.single-pin {
+  margin-bottom: 30px;
 }
