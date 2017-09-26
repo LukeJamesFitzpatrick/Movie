@@ -1,6 +1,22 @@
 <div class="user-profile">
-  <h3><%= @user.username %></h3>
+  <span class="profile-username"><%= @user.username %></span>
+
+  <% if @user != current_user %>
+    <% if current_user_is_following(current_user.id, @user.id) %>
+      <%= link_to 'Unfollow', unfollow_user_path(@user.username), remote: true, class: 'btn btn-sm unfollow-button', id: 'unfollow-button', method: :post %>
+    <% else %>
+      <%= link_to 'Follow', follow_user_path(@user.username), remote: true, class: 'btn btn-sm follow-button', id: 'follow-button', method: :post %>
+    <% end %>
+    <% else %>
+    <%= link_to "Edit", edit_user_registration_path, class: 'btn btn-info btn-sm' %>
+  <% end %>
+
   <div>
+    <div class="profile-soc">
+      <span class="profile-follow"><%= @user.pins.count %> <%= 'pin'.pluralize(@user.pins.count)%></span>
+      <span class="profile-follow"><%= link_to "#{@user.followers.count} followers".pluralize(@user.followers.count), followers_user_path %></span>
+      <span class="profile-follow"><%= link_to "#{@user.following.count} following", following_user_path %></span>
+    </div>
     <p><%= @user.bio %></p>
   </div>
 </div>

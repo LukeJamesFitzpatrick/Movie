@@ -1,13 +1,17 @@
+html, body {
+  height: 100%;
+}
+
 body {
+  font-family: 'Raleway', sans-serif;
   background-color: #fff;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 18px;
+  position: relative;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
@@ -31,6 +35,8 @@ a {
 div {
   &.field, &.actions {
     margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 14px;
   }
 }
 
@@ -71,6 +77,10 @@ div {
   float: right;
 }
 
+.btn-get {
+  margin-top: 10px;
+}
+
 .logo {
   width:14%;
   height: 14%;
@@ -78,13 +88,26 @@ div {
 }
 
 .user-profile {
-  margin: 20px 60px;
+  margin: 25px auto;
+  width: 60%;
+}
+
+.profile-username {
+  font-size: 24px;
 }
 
 .form-control {
   margin-bottom: 10px;
 }
 
+.profile-soc {
+  margin: 20px 0;
+}
+
+.profile-follow {
+  margin-right: 15px;
+}
+/* Comments */
 .card {
   position: relative;
   display: -webkit-box;
@@ -115,4 +138,46 @@ div {
 
 .comment-user {
   font-weight: bold;
+}
+
+/* Follow/Unfollow button */
+
+.follow-button {
+  border-color: #4090db;
+  color: #4090db;
+  margin-left: 20px;
+  &:visited, &:focus, &:hover {
+    border-color: #2D6396;
+    color: #2D6396;
+  }
+}
+
+.unfollow-button {
+  border-color: #66bd2b;
+  background-color: #66bd2b;
+  color: white;
+  margin-left: 20px;
+  &:visited, &:focus, &:hover {
+    border-color: #47821F;
+    background-color: #47821F;
+    color: white;
+  }
+}
+
+.container {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  float: right;
+  margin-bottom: 30px;
+}
+
+.single-pin {
+  margin-bottom: 30px;
 }

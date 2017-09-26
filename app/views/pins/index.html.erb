@@ -1,9 +1,10 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
-  <%= form_tag pins_path, :method => 'get' do %>
-    <%= text_field_tag :search, params[:search], class: "form-control" %>
-    <%= submit_tag "Search", :name => nil, class: "btn btn-info btn-block" %>
+<div>
+  <%= search_form_for @q, html: {class: "form-inline"} do |f| %>
+    <%= f.search_field :description_or_user_username_cont, class: "form-control", placeholder: "Search..." %>
   <% end %>
+</div>
 
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
@@ -24,16 +25,16 @@
             <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
               <span class="glyphicon glyphicon-trash"></span>
               Delete
-            <%= link_to 'Like', like_pin_path(pin), method: :post, class: 'pull-right' %>
             <% end %>
           </div>
         <% end %>
-
+        <% if pin.user != current_user %>
+          <%= link_to 'Like', like_pin_path(pin), method: :post, class: 'pull-right, btn btn-sm btn-like btn-success' %>
+        <% end %>
       </div>
     </div>
   <% end %>
 </div>
-
 <div class="center">
-  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+  <%= paginate @pins %>
 </div>
