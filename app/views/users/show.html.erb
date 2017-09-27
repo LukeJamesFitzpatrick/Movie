@@ -1,6 +1,5 @@
 <div class="user-profile">
-  <span class="profile-username"><%= @user.username %></span>
-
+  <span class="profile-username"><%= link_to @user.username, user_page_path(@user) %></span>
   <% if @user == current_user %>
     <% if current_user_is_following(current_user.id, @user.id) %>
       <%= link_to 'Unfollow', unfollow_user_path(@user.username), remote: true, class: 'btn btn-sm unfollow-button', id: 'unfollow-button', method: :post %>
@@ -40,7 +39,6 @@
             <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
               <span class="glyphicon glyphicon-trash"></span>
               Delete
-            <%= link_to 'Like', like_pin_path(pin), method: :post, class: 'pull-right' %>
             <% end %>
           </div>
         <% end %>

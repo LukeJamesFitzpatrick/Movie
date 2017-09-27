@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   resources :comments
   # full /pins resources
   resources :pins do
-
-
     member do
       post '/like' => 'pins#like'
     end
