@@ -3,9 +3,14 @@
 	<p>
 	<h3>Share folders publicly, or find <u>really valuable stuff.</u> It's something new ... &#x1f44f;</h3>
 	</p>
-	&nbsp;	
+	&nbsp;
 		<p>
 			<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
 			<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-		</p>  
+		</p>
+</div>
+<div>
+  <%= search_form_for @q, html: {class: "gl-search" } do |f| %>
+    <%= f.search_field :description_or_user_username_cont, class: "form-control", placeholder: "Search..." %>
+  <% end %>
 </div>

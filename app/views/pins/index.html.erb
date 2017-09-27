@@ -1,11 +1,5 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
-<div>
-  <%= search_form_for @q do |f| %>
-    <%= f.search_field :description_or_user_username_cont, class: "form-control", placeholder: "Search..." %>
-  <% end %>
-</div>
-
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
     <div class="box panel panel-default">
