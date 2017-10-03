@@ -7,17 +7,20 @@
         <%= image_tag @pin.image.url(:medium) %>
       </div>
       <div class="panel-body">
-        <p><strong><%= @pin.user.username %></strong></p>
+        <p><strong><%= link_to @pin.user.username, user_page_path(@pin.user.id) %></strong></p>
         <p><%= @pin.description %></p>
         <span><%= @pin.likes.count %></span> <span class="glyphicon glyphicon-heart"></span>
         <span><%= @pin.view %></span> <i class="glyphicon glyphicon-eye-open"></i>
-        <p><%= link_to "Get", @pin.link, class: "btn btn-sm btn-success btn-get" %></p>
-        <% if @pin.user == current_user %>
+        <p><span class="gl-edit"><% if @pin.user == current_user %>
           <%= link_to edit_pin_path(@pin) do %>
             <span class="glyphicon glyphicon-edit"></span>
             Edit
           <% end %>
-        <% end %>
+        <% end %></span>
+        <%= link_to "Get", @pin.link, class: "btn btn-sm btn-success btn-get" %>
+        <% if @pin.user != current_user %>
+          <%= link_to 'Like', like_pin_path(@pin), method: :post, class: 'pull-right, btn btn-sm btn-like btn-success' %>
+        <% end %></p>
       </div>
     </div>
   </div>
