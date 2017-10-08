@@ -27,4 +27,5 @@ Rails.application.routes.draw do
 
   root 'pins#index'
   get "about" => "pages#about"
+  get "contact" => "pages#contact"
 end
