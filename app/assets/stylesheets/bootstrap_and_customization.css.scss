@@ -13,7 +13,7 @@ $jumbotron-bg:                     white;
 @import 'bootstrap';
 
 .center {
-     text-align: center;
+     text-align: left;
 }
 
 .navbar-brand {
@@ -26,32 +26,48 @@ $jumbotron-bg:                     white;
 
 /* footer */
 
+$footer-header-height: 102px;
+$footer-body-height: 50px;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background: #0092ce;
+  background-repeat: repeat-x;
+  margin-bottom: $footer-header-height + $footer-body-height;
+}
+
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  color: #777;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    li {
+      display: inline;
+      margin-right: 1em;
+      a {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+      }
+
+      a:hover {
+        text-transform: uppercase;
+        color: none;
+      }
+    }
+  }
 }
 
-footer a {
-  color: #555;
+footer.header {
+  bottom: $footer-body-height;
+  height: $footer-header-height;
 }
-
-footer a:hover {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
-  padding: 30px;
-  font-size: 14px;
+footer.body {
+  min-height: $footer-body-height;
 }

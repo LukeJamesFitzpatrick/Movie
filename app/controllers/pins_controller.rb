@@ -2,6 +2,7 @@ class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy, :like]
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_global_search_var
 
   def index
     # @q = Pin.search(params[:q])
