@@ -18,6 +18,7 @@ gem 'masonry-rails', '~> 0.2.0'
 gem 'redis', '~> 4.0'
 gem 'kaminari', '~> 1.0', '>= 1.0.1'
 gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'sendgrid-ruby'
 
 group :development, :test do
 	gem 'sqlite3'
