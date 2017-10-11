@@ -22,6 +22,7 @@ gem 'sendgrid-ruby'
 
 group :development, :test do
 	gem 'sqlite3'
+	gem 'dotenv-rails'
 end
 
 group :production do
