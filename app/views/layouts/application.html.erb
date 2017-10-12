@@ -11,6 +11,7 @@
 </head>
 
 <body>
+	<%= render 'layouts/header' %>
 	<div class="container">
     <%= search_form_for @q, html: {class: "gl-search" } do |f| %>
       <%= f.search_field :description_or_user_username_cont, class: "form-control", placeholder: "Search..." %>
