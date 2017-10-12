@@ -9,8 +9,8 @@
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
 
+<body>
 	<%= render 'layouts/header' %>
 	<div class="container">
     <%= search_form_for @q, html: {class: "gl-search" } do |f| %>
@@ -21,8 +21,6 @@
      	<%= content_tag(:div, msg, class: "alert alert-info") %>
 		<% end %>
 		<%= yield %>
-    <%= render 'layouts/footer' %>
 	</div>
-
 </body>
 </html>
