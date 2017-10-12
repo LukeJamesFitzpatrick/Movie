@@ -19,6 +19,7 @@ gem 'redis', '~> 4.0'
 gem 'kaminari', '~> 1.0', '>= 1.0.1'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'sendgrid-ruby'
+gem 'gibbon', git: 'git://github.com/amro/gibbon.git'
 
 group :development, :test do
 	gem 'sqlite3'

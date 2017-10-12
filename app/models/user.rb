@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
   has_many :following, through: :following_relationships, source: :following
 
+  after_create :subscribe_user_to_mailing_list
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -16,6 +18,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 	validates :name, presence: true
+
+  def subscribe_user_to_mailing_list
+    SubscribeUserToMailingListJob.perform_later(self)
+  end
 
   def follow(user_id)
       following_relationships.create(following_id: user_id)
