@@ -27,8 +27,8 @@ $jumbotron-bg:                     white;
 /* footer */
 
 footer {
-  margin-top: 10px;
-  padding-top: 10px;
+  margin-top: 45px;
+  padding-top: 45px;
   color: #777;
 }
 
@@ -41,17 +41,17 @@ footer a:hover {
 }
 
 footer small {
-  float: center;
+  float: left;
 }
 
 footer ul {
-  float: center;
+  float: left;
   list-style: none;
 }
 
 footer ul li {
-  float: center;
-  margin: 0px;
+  float: left;
+  margin-left: 0px;
   padding: 30px;
   font-size: 14px;
 }
