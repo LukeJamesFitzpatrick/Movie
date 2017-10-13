@@ -27,36 +27,34 @@ $jumbotron-bg:                     white;
 /* footer */
 
 footer {
-  margin-top: 0px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: #777;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    li {
+      display: inline;
+      margin-right: 1em;
+      a {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+      }
+
+      a:hover {
+        text-transform: uppercase;
+        color: white;
+      }
+    }
+  }
 }
 
-footer a {
-  color: #555;
+footer.header {
+  bottom: $footer-body-height;
+  height: $footer-header-height;
+}
+footer.body {
+  min-height: $footer-body-height;
 }
 
-body {
-  border: 1px solid transparent;
-}
-
-footer a:hover {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: left;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 0px;
-  padding: 30px;
-  font-size: 14px;
-}
