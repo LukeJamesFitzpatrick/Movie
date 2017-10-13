@@ -37,10 +37,22 @@ footer a {
   color: #555;
 }
 
+body {
+  border: 1px solid transparent;
+}
+
 footer a:hover {
   color: #222;
 }
 
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: left;
+  list-style: none;
+}
 
 footer ul li {
   float: left;
