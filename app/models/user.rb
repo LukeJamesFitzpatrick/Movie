@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
 
   private
 
-  def subscribe_user_to_mailing_list
+  def check_mailchimp_list_for_user?
     list_id = "4b2b17f02b"
     gb = Gibbon::API.new
     a = gb.lists.member_info({:id => list_id, :emails => [{:email => self.email}]})
@@ -35,5 +35,4 @@ class User < ActiveRecord::Base
     def unfollow(user_id)
       following_relationships.find_by(following_id: user_id).destroy
     end
-
 end
