@@ -26,8 +26,7 @@ class User < ActiveRecord::Base
   private
 
   def subscribe_user_to_mailing_list
-    MAILCHIMP.lists(ENV["MAILCHIMP_LIST_ID"])
-    list_id = "4b2b17f02b"
+    MAILCHIMP.lists(ENV["4b2b17f02b"])
   end
 
   def follow(user_id)
