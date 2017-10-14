@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
   def subscribe_user_to_mailing_list
     SubscribeUserToMailingListJob.perform_later(self)
     list_id = "4b2b17f02b"
+    gb = Gibbon::API.new
   end
 
   def follow(user_id)
