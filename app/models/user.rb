@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
   has_many :following, through: :following_relationships, source: :following
 
+  after_create :subscribe_user_to_mailing_list
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -17,22 +19,11 @@ class User < ActiveRecord::Base
 
 	validates :name, presence: true
 
-  if ENV['GMAIL_DOMAIN'] == 'http://gammanu.org/'
-    after_create :send_alert_email
-    after_create :check_to_send_mailchimp_email
-  end
+  private
 
-  def name
-    "#{self.first_name} #{self.last_name}"
+  def subscribe_user_to_mailing_list
+    SubscribeUserToMailingListJob.perform_later(self)
   end
-
-  def check_mailchimp_list_for_user?
-    list_id = "4b2b17f02b"
-    gb = Gibbon::API.new
-    a = gb.lists.member_info({:id => list_id, :emails => [{:email => self.email}]})
-    a["success_count"] == 0
-  end
-
 
   def follow(user_id)
       following_relationships.create(following_id: user_id)
