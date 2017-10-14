@@ -21,8 +21,8 @@ class User < ActiveRecord::Base
 
   private
 
-  def subscribe_user_to_mailing_list
-    SubscribeUserToMailingListJob.perform_later(self)
+  def add_to_list
+    list_id = “4b2b17f02b” @gb = Gibbon::Request.new subscribe = @gb.lists(list_id).members.create(body: { email_address: self.email, status: “subscribed”, double_optin: false })
   end
 
   def follow(user_id)
