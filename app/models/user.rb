@@ -19,12 +19,15 @@ class User < ActiveRecord::Base
 
 	validates :name, presence: true
 
+  def create
+    subscribe_user_to_mailing_list
+  end
+
   private
 
   def subscribe_user_to_mailing_list
-    SubscribeUserToMailingListJob.perform_later(self)
+    MAILCHIMP.lists(ENV["MAILCHIMP_LIST_ID"])
     list_id = "4b2b17f02b"
-    gb = Gibbon::API.new
   end
 
   def follow(user_id)
