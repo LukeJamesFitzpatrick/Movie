@@ -19,14 +19,10 @@ class User < ActiveRecord::Base
 
 	validates :name, presence: true
 
-  def create
-    subscribe_user_to_mailing_list
-  end
-
   private
 
   def subscribe_user_to_mailing_list
-    MAILCHIMP.lists(ENV["4b2b17f02b"])
+    SubscribeUserToMailingListJob.perform_later(self)
   end
 
   def follow(user_id)
