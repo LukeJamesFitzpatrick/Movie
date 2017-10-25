@@ -16,3 +16,4 @@
 /tmp
 .DS_Store
 /public/system/*
+/config/local_env.yml
