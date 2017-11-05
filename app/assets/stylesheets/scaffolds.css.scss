@@ -1,14 +1,9 @@
-html, body {
-  height: 100%;
-}
-
 body {
   font-family: 'Raleway', sans-serif;
   background-color: #fff;
   color: #333;
   font-size: 16px;
   line-height: 18px;
-  position: relative;
 }
 
 p, ol, ul, td {
@@ -172,16 +167,7 @@ div {
   }
 }
 
-.container {
-  min-height: 100%;
-  position: relative;
-  padding-bottom: 60px;
-}
-
 footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
   float: left;
   margin-bottom: 20px;
 }
