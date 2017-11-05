@@ -13,8 +13,8 @@
 <body>
 	<%= render 'layouts/header' %>
 	<div class="container">
-    <%= search_form_for @q, html: {class: "gl-search" } do |f| %>
-      <%= f.search_field :description_or_user_username_cont, class: "form-control", placeholder: "Search..." %>
+    <%= form_tag pins_path, method: :get, html: {class: "gl-search" } do |f| %>
+      <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search..." %>
     <% end %>
 		<% flash.each do |name, msg| %>
      	<%= content_tag(:div, msg, class: "alert alert-info") %>
@@ -23,6 +23,6 @@
    	</div>
     <div class="container">
     <%= render 'layouts/footer' %>
-  </div> 
+  </div>
 </body>
 </html>

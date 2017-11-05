@@ -17,13 +17,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'masonry-rails', '~> 0.2.0'
 gem 'redis', '~> 4.0'
 gem 'kaminari', '~> 1.0', '>= 1.0.1'
-gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'sendgrid-ruby'
 gem 'gibbon', git: 'git://github.com/amro/gibbon.git'
 
 group :development, :test do
 	gem 'sqlite3'
 	gem 'dotenv-rails'
+  gem 'byebug'
 end
 
 group :production do

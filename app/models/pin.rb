@@ -15,4 +15,10 @@ class Pin < ActiveRecord::Base
     self.view += 1
     self.save
   end
+
+  def self.pin_search(query)
+    pins = self.joins(:user)
+    pins = pins.where("description LIKE ? OR users.username LIKE ? ", "%#{query}%", "%#{query}%") if query.present?
+    pins
+  end
 end
