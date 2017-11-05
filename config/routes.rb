@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :comments
   # full /pins resources
-  resources :pins do
+  resources :pins, path: 'files' do
     member do
       post '/like' => 'pins#like'
     end
