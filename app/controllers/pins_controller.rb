@@ -17,7 +17,7 @@ class PinsController < ApplicationController
   end
 
   def show
-    @pin = Pin.includes(:comments).find(params[:id])
+    @pin = Pin.includes(:comments).find_by_param(params[:id])
     @comment = Comment.new
     @pin.count_views
   end
@@ -55,11 +55,11 @@ class PinsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pin
-      @pin = Pin.find_by(id: params[:id])
+      @pin = Pin.find_by_param(params[:id])
     end
 
     def correct_user
-      @pin = current_user.pins.find_by(id: params[:id])
+      @pin = current_user.pins.find_by_param(params[:id])
       redirect_to pins_path, notice: "Not authorized to edit this post" if @pin.nil?
     end
 

@@ -21,4 +21,15 @@ class Pin < ActiveRecord::Base
     pins = pins.where("description LIKE ? OR users.username LIKE ? ", "%#{query}%", "%#{query}%") if query.present?
     pins
   end
+
+  def to_param
+    description.downcase.split[0..4].join('-')
+  end
+
+
+  def self.find_by_param(input)
+    input = input.split('-').join(' ')
+    where("LOWER(description) LIKE ?",  "#{input}%").last
+  end
+
 end
