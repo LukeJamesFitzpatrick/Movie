@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   get "about" => "pages#about"
   get "contact" => "pages#contact"
   get "faq" => "pages#faq"
+  get "how-it-works" => "pages#how_it_works"
 end
