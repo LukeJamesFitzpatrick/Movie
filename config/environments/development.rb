@@ -42,5 +42,4 @@ Rails.application.configure do
   Paperclip.options[:command_path] = "/usr/local/bin/"
 
   # Sets paperclip to upload images to Amazon S3
-  
 end

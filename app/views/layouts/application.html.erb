@@ -14,7 +14,7 @@
 	<%= render 'layouts/header' %>
 	<div class="container">
     <%= form_tag pins_path, method: :get, html: {class: "gl-search" } do |f| %>
-      <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search..." %>
+      <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search files across Drive, Docs, Dropbox and more ..." %>
     <% end %>
 		<% flash.each do |name, msg| %>
      	<%= content_tag(:div, msg, class: "alert alert-info") %>

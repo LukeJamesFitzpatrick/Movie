@@ -10,9 +10,9 @@ class PinsController < ApplicationController
   def like
     @like = @pin.likes.build(user_id: current_user.id)
     if @like.save
-      redirect_to pins_path, notice: 'You liked this resource.'
+      redirect_to pins_path, notice: 'You liked this file.'
     else
-      redirect_to pins_path, notice: 'You have already liked this resource.'
+      redirect_to pins_path, notice: 'You have already liked this file.'
     end
   end
 
